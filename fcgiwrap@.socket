@@ -1,0 +1,11 @@
+[Unit]
+Description=fcgiwrap Socket
+
+[Socket]
+ListenStream=/run/fcgiwrap/fcgiwrap-%i.sock
+RuntimeDirectory=fcgiwrap
+SocketUser=%i
+SocketMode=0660
+
+[Install]
+WantedBy=sockets.target

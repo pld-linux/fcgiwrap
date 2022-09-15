@@ -1,0 +1,8 @@
+# fcgiwrap configuration parameters
+
+# Specify the number of fcgiwrap processes to prefork
+DAEMON_PROCS=1
+
+# Specify additional daemon options. See man fcgiwrap.
+DAEMON_OPTS=-f
+
