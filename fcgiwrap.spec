@@ -3,7 +3,7 @@
 Summary:	Simple FastCGI wrapper for CGI scripts
 Name:		fcgiwrap
 Version:	1.1.0
-Release:	0.1
+Release:	1
 License:	MIT
 URL:		https://github.com/gnosek/fcgiwrap
 Source0:	https://github.com/gnosek/fcgiwrap/archive/%{commit}/%{name}-%{commit}.tar.gz
@@ -23,6 +23,7 @@ BuildRequires:	coreutils
 BuildRequires:	fcgi-devel
 BuildRequires:	gcc
 BuildRequires:	systemd-devel
+Provides:       webserver(cgi)
 
 %description
 This package provides a simple FastCGI wrapper for CGI scripts with/
@@ -90,4 +91,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/%{name}.8*
 %{systemdunitdir}/%{name}@.service
 %{systemdunitdir}/%{name}@.socket
-%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
